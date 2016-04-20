@@ -41,6 +41,7 @@ mailto:{{recipient}}?subject={{subject}}&amp;body={{body}}</string>
 				<string>MailComposeView</string>
 				<string>Inbox</string>
 				<string>Gmail</string>
+				<string>Spark</string>
 				<string>Custom</string>
 			</array>
 			<key>validTitles</key>
@@ -49,6 +50,7 @@ mailto:{{recipient}}?subject={{subject}}&amp;body={{body}}</string>
 				<string>MailComposeView</string>
 				<string>Inbox</string>
 				<string>Gmail</string>
+				<string>Spark</string>
 				<string>Custom</string>
 			</array>
 			<key>default</key>

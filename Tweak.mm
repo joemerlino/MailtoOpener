@@ -117,6 +117,15 @@ static BOOL handleURL(NSURL *url) {
             [[UIApplication sharedApplication]openURL:[NSURL URLWithString:newURL]];
             return YES;
         }
+        if ([app isEqualToString:@"Spark"]) {
+            if(!body)
+                body = @"";
+            if(!subject)
+                subject = @"";
+            NSString *newURL = [NSString stringWithFormat:@"readdle-spark://compose?subject=%@&body=%@&recipient=%@", subject,  body, recipient];
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:newURL]];
+            return YES;
+        }
         if ([app isEqualToString:@"Custom"]) {
             NSString *newURL = [preferences stringForKey:@"CustomURL"];
             newURL = [newURL stringByReplacingOccurrencesOfString:@"{{recipient}}" withString:recipient];
