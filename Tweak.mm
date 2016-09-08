@@ -126,6 +126,15 @@ static BOOL handleURL(NSURL *url) {
             [[UIApplication sharedApplication]openURL:[NSURL URLWithString:newURL]];
             return YES;
         }
+        if ([app isEqualToString:@"Outlook"]) {
+            if(!body)
+                body = @"";
+            if(!subject)
+                subject = @"";
+            NSString *newURL = [NSString stringWithFormat:@"ms-outlook://compose?to=%@subject=%@&body=%@", recipient, subject, body];
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:newURL]];
+            return YES;
+        }
         if ([app isEqualToString:@"Custom"]) {
             NSString *newURL = [preferences stringForKey:@"CustomURL"];
             newURL = [newURL stringByReplacingOccurrencesOfString:@"{{recipient}}" withString:recipient];
