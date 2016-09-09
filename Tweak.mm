@@ -131,7 +131,7 @@ static BOOL handleURL(NSURL *url) {
                 body = @"";
             if(!subject)
                 subject = @"";
-            NSString *newURL = [NSString stringWithFormat:@"ms-outlook://compose?to=%@subject=%@&body=%@", recipient, subject, body];
+            NSString *newURL = [NSString stringWithFormat:@"ms-outlook://compose?to=%@&subject=%@&body=%@", recipient, subject, body];
             [[UIApplication sharedApplication]openURL:[NSURL URLWithString:newURL]];
             return YES;
         }
